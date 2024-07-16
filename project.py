@@ -7,3 +7,6 @@ class user:
         self.friends.add(friend)
     def remove_friend(self,friend):
         self.friends.discard(friend)
+class SocialNetworkGraph:
+    def __init__(self):
+        self.users={}
