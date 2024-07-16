@@ -5,5 +5,5 @@ class user:
         self.friends=set()
     def add_friend(self,friend):
         self.friends.add(friend)
-
-    
+    def remove_friend(self,friend):
+        self.friends.discard(friend)
