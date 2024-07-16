@@ -3,4 +3,7 @@ class user:
         self.user_id=user_id
         self.name=name
         self.friends=set()
+    def add_friend(self,friend):
+        self.friends.add(friend)
+
     
