@@ -54,4 +54,19 @@ class SocialNetworkGraph:
         return sorted(users,key=key_func)
     def average_friends(graph):
         total_friends=sum(len(graph.get_friends(user)) for user in graph.get_users()) 
-        return total_friends /len(graph.get_users()) 
+        return total_friends /len(graph.get_users())
+    import heapq
+    def dijkstra(graph,start_user):
+        distances={user: float('inf') for user in graph.get_users()}
+        distances[start_user]=0
+        priority_queue=[(0,start_user)]
+        while priority_queue:
+            current_distance,current_user=heapq.heappop(priority_queue)
+            if current_distance>distances[current_user]:
+                continue
+            for neighbor in graph.get_friends(current_user):
+               distance=current_distance +1
+               if distance<distances[neighbor]:
+                 distances[neighbor]=distance
+            heapq.heappush(priority_queue,(distance,neighbor))
+        return distances
