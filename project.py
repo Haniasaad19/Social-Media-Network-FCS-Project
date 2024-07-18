@@ -19,5 +19,8 @@ class SocialNetworkGraph:
         if user1 in self.users and user2 in self.users:
             self.users[user1].append(user2)
             self.users[user2].append(user1)
-            
+    def remove_relationship(self,user1,user2):
+        if user1 in self.users and user2 in self.users:
+            self.users[user1].remove(user2)
+            self.users[user2].remove(user1)      
     
