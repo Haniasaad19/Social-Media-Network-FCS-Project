@@ -28,3 +28,6 @@ class SocialNetworkGraph:
             for friend in self.users[user]:
                 self.users[friend].remove(user)
             del self.users[user]
+    def get_users(self):
+        return list(self.users.keys())
+    
