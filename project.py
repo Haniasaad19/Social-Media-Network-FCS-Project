@@ -41,4 +41,13 @@ class SocialNetworkGraph:
                 visited.add(user)
                 print(user)
             stack.extend(set(self.get_friends(user))-visited)
-        
+    def bfs(graph,start_user):
+        visited=set()
+        queue=[start_user]
+        while queue:
+            user=queue.pop(0)
+            if user not in visited:
+                visited.add(user)
+                print(user)
+            queue.extend(set(graph.get_friends(user))-visited) 
+               
