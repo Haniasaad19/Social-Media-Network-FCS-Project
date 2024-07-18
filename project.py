@@ -23,4 +23,8 @@ class SocialNetworkGraph:
         if user1 in self.users and user2 in self.users:
             self.users[user1].remove(user2)
             self.users[user2].remove(user1)      
-    
+    def remove_user(self,user):
+        if user in self.users:
+            for friend in self.users[user]:
+                self.users[friend].remove(user)
+            del self.users[user]
