@@ -50,4 +50,5 @@ class SocialNetworkGraph:
                 visited.add(user)
                 print(user)
             queue.extend(set(graph.get_friends(user))-visited) 
-               
+    def sort_users(users,key_func):
+        return sorted(users,key=key_func)   
