@@ -30,4 +30,5 @@ class SocialNetworkGraph:
             del self.users[user]
     def get_users(self):
         return list(self.users.keys())
-    
+    def get_friends(self,user):
+        return self.users.get(user,[])
