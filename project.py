@@ -32,3 +32,13 @@ class SocialNetworkGraph:
         return list(self.users.keys())
     def get_friends(self,user):
         return self.users.get(user,[])
+    def dfs(graph,start_user):
+        visited=set()
+        stack=[start_user]
+        while stack:
+            user=stack.pop()
+            if user not in visited:
+                visited.add(user)
+                print(user)
+            stack.extend(set(self.get_friends(user))-visited)
+        
