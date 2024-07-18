@@ -51,4 +51,7 @@ class SocialNetworkGraph:
                 print(user)
             queue.extend(set(graph.get_friends(user))-visited) 
     def sort_users(users,key_func):
-        return sorted(users,key=key_func)   
+        return sorted(users,key=key_func)
+    def average_friends(graph):
+        total_friends=sum(len(graph.get_friends(user)) for user in graph.get_users()) 
+        return total_friends /len(graph.get_users()) 
