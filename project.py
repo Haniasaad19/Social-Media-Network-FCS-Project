@@ -15,5 +15,9 @@ class SocialNetworkGraph:
             self.users[user]=[]
         else:
             print('this user is already using the network ')
+    def add_relationship(self,user1,user2):
+        if user1 in self.users and user2 in self.users:
+            self.users[user1].append(user2)
+            self.users[user2].append(user1)
             
     
