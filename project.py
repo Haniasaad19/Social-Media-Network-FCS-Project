@@ -7,6 +7,8 @@ class user:
         self.posts=[]
     def add_interest(self,interest):
         self.interests.append(interest)
+    def add_post(self,post):
+        self.posts.append(post)
     def add_friend(self,friend):
         self.friends.append(friend)
     def remove_friend(self,friend):
