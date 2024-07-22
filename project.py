@@ -13,6 +13,8 @@ class user:
         self.friends.append(friend)
     def remove_friend(self,friend):
         self.friends.remove(friend)
+import networkx as nx
+import matplotlib.pyplot as plt
 class SocialNetworkGraph:
     def __init__(self):
         self.users={}
@@ -76,6 +78,5 @@ class SocialNetworkGraph:
                  distances[neighbor]=distance
             heapq.heappush(priority_queue,(distance,neighbor))
         return distances
-    import networkx as nx
-    import matplotlib.pyplot as plt
+    
     
