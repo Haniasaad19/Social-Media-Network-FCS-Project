@@ -78,5 +78,7 @@ class SocialNetworkGraph:
                  distances[neighbor]=distance
             heapq.heappush(priority_queue,(distance,neighbor))
         return distances
+    def add_edge(self,user_id1,user_id2):
+        self.graph.add_edge(user_id1,user_id2)
     
     
