@@ -92,4 +92,15 @@ class SocialNetworkGraph:
         nx.draw_networkx_labels(self.graph,pos,labels,font_size=8)
         plt.title(title)
         plt.show()
-    
+#example:
+user1=user(1011,'hani',['skiing','gym'])
+user2=user(1012,'david',['skiing','hiking'])
+user3=user(1013,'moe',['eating','party'])
+user4=user(1014,'ali',['swimming','gym'])
+graph=SocialNetworkGraph()
+graph.add_user(user1)
+graph.add_user(user2)
+graph.add_user(user3)
+graph.add_user(user4)
+graph.add_edge('user1','user2')
+graph.add_edge('user3','user4')    
