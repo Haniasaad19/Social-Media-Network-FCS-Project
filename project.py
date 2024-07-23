@@ -78,5 +78,7 @@ class SocialNetworkGraph:
         return distances
     def add_edge(self,user_id1,user_id2):
         self.graph.add_edge(user_id1,user_id2)
+    def plot(self,title="Network Graph"):
+        pos=nx.spring_layout(self.graph)
     
     
