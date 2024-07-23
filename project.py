@@ -1,9 +1,9 @@
 class user:
-    def __init__(self,user_id,name):
+    def __init__(self,user_id,name,interests):
         self.user_id=user_id
         self.name=name
         self.friends=[]
-        self.interests=[]
+        self.interests=interests
         self.posts=[]
     def add_interest(self,interest):
         self.interests.append(interest)
