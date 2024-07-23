@@ -18,11 +18,9 @@ import matplotlib.pyplot as plt
 class SocialNetworkGraph:
     def __init__(self):
         self.users={}
-    def add_user(self,user):
-        if user not in self.users:
-            self.users[user]=[]
-        else:
-            print('this user is already using the network ')
+        self.graph=nx.SocialNetworkGraph()
+    def add_user(self,user_id,name,total_friends):
+        self.graph.add_node(user_id,name=name,friends_count=friends_count)
     def add_relationship(self,user1,user2):
         if user1 in self.users and user2 in self.users:
             self.users[user1].append(user2)
