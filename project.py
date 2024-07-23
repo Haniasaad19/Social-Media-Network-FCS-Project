@@ -89,4 +89,7 @@ class SocialNetworkGraph:
         connections=len(self.graph.edges(user_id))
         interests=",".join(node[1].get('interests',[]))
         labels[user_id]=f"{name}\nfriends:{total_friends}\nconnections:{connections}\ninterests:{interests}
+        nx.draw_networkx_labels(self.graph,pos,labels,font_size=8)
+        plt.title(title)
+        plt.show()
     
