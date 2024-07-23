@@ -82,5 +82,11 @@ class SocialNetworkGraph:
         pos=nx.spring_layout(self.graph)
         plt.figure(figsize=(10,8))
         nx.draw(self.graph,pos,with_labels=True,node_color='skyblue',node_size=2000,edge_color='gray',font_size=10,font_colors='black')
-    
+    labels={}
+    for node in self.graph.node(data=True):
+        user_id=node[0]
+        name=node[1].get('name','N/A')
+        connections=len(self.graph.edges(user_id))
+        interests=",".join(node[1].get('interests',[]))
+        labels[user_id]=f"{name}\nfriends:{total_friends}\nconnections:{connections}\ninterests:{interests}
     
