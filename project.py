@@ -80,5 +80,7 @@ class SocialNetworkGraph:
         self.graph.add_edge(user_id1,user_id2)
     def plot(self,title="Network Graph"):
         pos=nx.spring_layout(self.graph)
+        plt.figure(figsize=(10,8))
+        nx.draw(self.graph,pos,with_labels=True,node_color='skyblue',node_size=2000,edge_color='gray',font_size=10,font_colors='black')
     
     
