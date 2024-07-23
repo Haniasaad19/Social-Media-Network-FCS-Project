@@ -104,3 +104,6 @@ graph.add_user(user3)
 graph.add_user(user4)
 graph.add_edge('user1','user2')
 graph.add_edge('user3','user4')    
+graph.plot()
+
+
