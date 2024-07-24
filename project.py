@@ -19,7 +19,7 @@ class SocialNetworkGraph:
     def __init__(self):
         self.users={}
         self.graph=nx.SocialNetworkGraph()
-    def add_user(self,user_id,name,total_friends):
+    def add_user(self,user_id,name,interests):
         self.graph.add_node(user_id,name=name,friends_count=friends_count)
     def add_relationship(self,user1,user2):
         if user1 in self.users and user2 in self.users:
@@ -92,6 +92,22 @@ class SocialNetworkGraph:
         nx.draw_networkx_labels(self.graph,pos,labels,font_size=8)
         plt.title(title)
         plt.show()
+    def menu():
+        graph=SocialNetworkGraph()
+        while True:
+            print('\nMenu:')
+            print("1-add user")
+            print('2-remove user')
+            print('3-add relationship')
+            print('4-remove relationship')
+            print('5-graph')
+            print('6-exit')
+            if choice==1:
+                user_id=int(input('what is the id: '))
+                name=input('what is the name of the user ')
+                a=input('what are the interests')
+                interests=a.split()
+                SocialNetworkGraph.add_user(self,user_id,name,interests)
 #example:
 user1=user(1011,'hani',['skiing','gym'])
 user2=user(1012,'david',['skiing','hiking'])
