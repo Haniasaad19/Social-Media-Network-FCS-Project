@@ -108,6 +108,9 @@ class SocialNetworkGraph:
                 a=input('what are the interests')
                 interests=a.split()
                 SocialNetworkGraph.add_user(self,user_id,name,interests)
+            elif choice==2:
+                name=input('what is the name: ')
+                SocialNetworkGraph.remove_user(self,name)
 #example:
 user1=user(1011,'hani',['skiing','gym'])
 user2=user(1012,'david',['skiing','hiking'])
