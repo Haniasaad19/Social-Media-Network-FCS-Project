@@ -114,7 +114,7 @@ class SocialNetworkGraph:
             elif choice==3:
                 name1=input('what is the name of first one: ')
                 name2=input('what is the name of second one: ')
-                add_relationship(self,name1,name2)
+                SocialNetworkGraph.add_relationship(self,name1,name2)
 #example:
 user1=user(1011,'hani',['skiing','gym'])
 user2=user(1012,'david',['skiing','hiking'])
