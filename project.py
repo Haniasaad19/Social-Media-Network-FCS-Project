@@ -119,6 +119,8 @@ class SocialNetworkGraph:
                 name1=input('what is the name of first one: ')
                 name2=input('what is the name of second one: ')
                 SocialNetworkGraph.remove_relationship(self,name1,name2)
+            elif choice==5:
+                plt.show()
 #example:
 user1=user(1011,'hani',['skiing','gym'])
 user2=user(1012,'david',['skiing','hiking'])
