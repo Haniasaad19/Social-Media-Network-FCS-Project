@@ -135,6 +135,12 @@ class SocialNetworkGraph:
         if user_id is not None:
             self.remove_user(user_id)
             messagebox.showinfo("Info", "User removed successfully!")
+    def add_relationship_gui(self):
+        user1_id = simpledialog.askinteger("Input", "Enter the first user ID:")
+        user2_id = simpledialog.askinteger("Input", "Enter the second user ID:")
+        if user1_id and user2_id:
+            self.add_relationship(user1_id, user2_id)
+            messagebox.showinfo("Info", "Relationship added successfully!")
 
 
 
