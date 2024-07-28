@@ -130,6 +130,12 @@ class SocialNetworkGraph:
                 messagebox.showinfo("Info", "User added successfully!")
             else:
                 messagebox.showerror("Error", "Invalid input, try again.")
+    def remove_user_gui(self):
+        user_id = simpledialog.askinteger("Input", "Enter user ID to remove:")
+        if user_id is not None:
+            self.remove_user(user_id)
+            messagebox.showinfo("Info", "User removed successfully!")
+
 
 
 # Example Usage:
