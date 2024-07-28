@@ -15,6 +15,8 @@ class User:
         self.friends.remove(friend)
 import networkx as nx
 import matplotlib.pyplot as plt
+import tkinter as tk
+from tkinter import simpledialog, messagebox
 class SocialNetworkGraph:
     def __init__(self):
         self.users={}
