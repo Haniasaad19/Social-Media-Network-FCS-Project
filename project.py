@@ -119,7 +119,17 @@ class SocialNetworkGraph:
 
         self.root.mainloop()
 
-    
+    def add_user_gui(self):
+        user_id = simpledialog.askinteger("Input", "Enter user ID:")
+        if user_id is not None:
+            name = simpledialog.askstring("Input", "Enter user name:")
+            interests = simpledialog.askstring("Input", "Enter interests (separated by spaces):")
+            if name and interests:
+                interests_list = interests.split()
+                self.add_user(user_id, name, interests_list)
+                messagebox.showinfo("Info", "User added successfully!")
+            else:
+                messagebox.showerror("Error", "Invalid input, try again.")
 
 
 # Example Usage:
