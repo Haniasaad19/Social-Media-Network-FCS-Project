@@ -98,38 +98,29 @@ class SocialNetworkGraph:
         plt.title(title)
         plt.show()
     def menu(self):
-        while True:
-            print('\nMenu:')
-            print("1 - Add user")
-            print('2 - Remove user')
-            print('3 - Add relationship')
-            print('4 - Remove relationship')
-            print('5 - Plot graph')
-            print('6 - Exit')
-            choice = int(input('Choose an option: '))
-            if choice == 1:
-                user_id = int(input('What is the ID of the user? '))
-                name = input('What is the name of the user? ')
-                interests = input('What are the interests (separated by spaces)? ').split()
-                self.add_user(user_id, name, interests)
-            elif choice == 2:
-                user_id = int(input('What is the ID of the user to remove? '))
-                self.remove_user(user_id)
-            elif choice == 3:
-                user1_id = int(input('What is the ID of the first user? '))
-                user2_id = int(input('What is the ID of the second user? '))
-                self.add_relationship(user1_id, user2_id)
-            elif choice == 4:
-                user1_id = int(input('What is the ID of the first user? '))
-                user2_id = int(input('What is the ID of the second user? '))
-                self.remove_relationship(user1_id, user2_id)
-            elif choice == 5:
-                self.plot()
-            elif choice == 6:
-                break
-            else:
-                print('Invalid choice, please try again.')
-        graph.plot()
+        self.root=tk.Tk()
+        self.root.title("social network graph ")
+        frame=tk.Frame(self.root)
+        frame.pack(pady=20)
+        btn_add_user=tk.Button(frame,text="add user ",command=self.add_user_gui)
+        btn_add_user.grid(row=0, column=0, padx=10, pady=10)
+
+        btn_remove_user = tk.Button(frame, text="Remove User", command=self.remove_user_gui)
+        btn_remove_user.grid(row=0, column=1, padx=10, pady=10)
+
+        btn_add_relationship = tk.Button(frame, text="Add Relationship", command=self.add_relationship_gui)
+        btn_add_relationship.grid(row=1, column=0, padx=10, pady=10)
+
+        btn_remove_relationship = tk.Button(frame, text="Remove Relationship", command=self.remove_relationship_gui)
+        btn_remove_relationship.grid(row=1, column=1, padx=10, pady=10)
+
+        btn_plot_graph = tk.Button(frame, text="Plot Graph", command=self.plot)
+        btn_plot_graph.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
+
+        self.root.mainloop()
+
+    
+
 
 # Example Usage:
 graph = SocialNetworkGraph()
