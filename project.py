@@ -127,13 +127,11 @@ class SocialNetworkGraph:
                 break
             else:
                 print('Invalid choice, please try again.')
+        graph.plot()
 
 # Example Usage:
 graph = SocialNetworkGraph()
-graph.add_user(1011, 'Hani', ['skiing'])
-graph.add_user(1012, 'David', ['gym'])
-graph.add_relationship(1011, 1012)  
-graph.plot()  # Plot the graph
+graph.menu()
     
 
 
