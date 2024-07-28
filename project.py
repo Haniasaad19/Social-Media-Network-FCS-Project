@@ -141,6 +141,12 @@ class SocialNetworkGraph:
         if user1_id and user2_id:
             self.add_relationship(user1_id, user2_id)
             messagebox.showinfo("Info", "Relationship added successfully!")
+    def remove_relationship_gui(self):
+        user1_id = simpledialog.askinteger("Input", "Enter the first user ID:")
+        user2_id = simpledialog.askinteger("Input", "Enter the second user ID:")
+        if user1_id and user2_id:
+            self.remove_relationship(user1_id, user2_id)
+            messagebox.showinfo("Info", "Relationship removed successfully!")
 
 
 
